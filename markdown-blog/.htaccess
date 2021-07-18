@@ -17,4 +17,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 # Dynamically get the root directory path of the blog
 RewriteCond $0#%{REQUEST_URI} ([^#]*)#(.*)\1$
-RewriteRule ^(.*?)/?$ %2blog-page.php?page=$1.md [L]
+RewriteRule ^(.*?)/?$ %2blog-page.php?page=$1 [L]

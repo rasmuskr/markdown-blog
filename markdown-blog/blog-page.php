@@ -4,7 +4,8 @@
  */
 require_once 'postRenderer.php';
 $postSlug = $_GET['page'];
-$page = 'posts/' . $postSlug;
+$postSlug = preg_replace("/[^a-z\-_0-9]+/i", "-", $postSlug);
+$page = 'posts/' . $postSlug . '.md';
 if (file_exists($page)) {
     $markdown = file_get_contents($page);
     $pageTitle = getPostTitle($markdown);
